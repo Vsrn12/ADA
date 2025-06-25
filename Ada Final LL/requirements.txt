@@ -1,0 +1,13 @@
+pandas
+polars
+matplotlib
+seaborn
+psutil
+tkinter
+# networkx # Comentado, ya que estamos minimizando su uso y eliminándolo si es posible
+numpy
+scipy
+# scikit-learn # Comentado, no se usa para algoritmos principales
+# plotly # Comentado, a menos que se decida usar para otros gráficos además del mapa
+folium
+tkhtmlview
