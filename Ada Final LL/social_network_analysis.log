@@ -229,3 +229,366 @@
 2025-06-24 09:29:53,148 - INFO - Grafo construido con 91 nodos y 493 aristas.
 2025-06-24 09:29:53,152 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 91, Aristas: 493
 2025-06-24 09:29:53,583 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 21:26:00,058 - INFO - Aplicación principal iniciada.
+2025-06-24 21:26:02,095 - INFO - Iniciando análisis EDA...
+2025-06-24 21:26:02,096 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 21:26:05,154 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:26:05,154 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 21:26:19,125 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:26:19,126 - INFO - EDA de ubicación iniciado
+2025-06-24 21:28:00,672 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 21:28:00,692 - INFO - EDA de usuarios iniciado
+2025-06-24 21:28:31,687 - INFO - Outliers en vecinos: 1455677
+2025-06-24 21:28:31,973 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 21:28:45,735 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 21:28:45,737 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 21:28:48,741 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:28:48,741 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 21:29:02,203 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:29:02,203 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 21:29:04,950 - INFO - Ubicaciones válidas procesadas: 91.
+2025-06-24 21:29:06,658 - INFO - Grafo construido con 91 nodos y 493 aristas.
+2025-06-24 21:29:06,665 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 91, Aristas: 493
+2025-06-24 21:29:07,076 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 21:31:48,515 - INFO - Aplicación principal iniciada.
+2025-06-24 21:31:50,471 - INFO - Iniciando análisis EDA...
+2025-06-24 21:31:50,471 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 21:31:50,637 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:31:50,637 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 21:31:58,988 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:31:58,988 - INFO - EDA de ubicación iniciado
+2025-06-24 21:33:39,800 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 21:33:39,819 - INFO - EDA de usuarios iniciado
+2025-06-24 21:34:10,855 - INFO - Outliers en vecinos: 1455677
+2025-06-24 21:34:11,147 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 21:34:15,422 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 21:34:15,424 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 21:34:18,443 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:34:18,443 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 21:34:28,768 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:34:28,768 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 21:34:36,725 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-24 21:34:36,725 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 100000 nodos.
+2025-06-24 21:34:37,633 - INFO - Muestreo realizado. Se considerarán 100000 nodos para el grafo.
+2025-06-24 21:34:38,398 - INFO - Diccionario de ubicaciones filtrado a 100000 entradas post-muestreo.
+2025-06-24 21:34:44,286 - INFO - Grafo construido con 100000 nodos y 13907 aristas.
+2025-06-24 21:34:44,454 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 100000, Aristas: 13907
+2025-06-24 21:36:07,367 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 21:37:39,383 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-24 21:37:39,385 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-24 21:37:39,593 - INFO - Louvain: Iniciando Nivel 1
+2025-06-24 21:37:40,509 - INFO - Louvain Nivel 1: Modularity global actual: 0.625772
+2025-06-24 21:37:40,511 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-24 21:37:40,605 - INFO - _build_community_graph: Grafo agregado con 91441 nodos.
+2025-06-24 21:37:40,630 - INFO - Louvain: Iniciando Nivel 2
+2025-06-24 21:37:41,971 - INFO - Louvain Nivel 2: Modularity global actual: 0.681432
+2025-06-24 21:37:41,973 - INFO - Louvain: Fase 1 no movió nodos en grafo agregado. Deteniendo.
+2025-06-24 21:37:41,973 - INFO - Louvain finalizado. Mejor modularidad global: 0.681432
+2025-06-24 21:37:45,250 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 90744 comunidades.
+2025-06-24 21:37:45,255 - INFO - UI Message (info): Comunidades detectadas: 90744
+2025-06-24 21:45:59,559 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 21:52:08,315 - INFO - Aplicación principal iniciada.
+2025-06-24 21:52:31,420 - INFO - Iniciando análisis EDA...
+2025-06-24 21:52:31,421 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 21:52:34,454 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:52:34,454 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 21:52:47,818 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:52:47,819 - INFO - EDA de ubicación iniciado
+2025-06-24 21:54:28,790 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 21:54:28,810 - INFO - EDA de usuarios iniciado
+2025-06-24 21:54:59,247 - INFO - Outliers en vecinos: 1455677
+2025-06-24 21:54:59,570 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 21:55:03,493 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 21:55:03,495 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 21:55:05,059 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 21:55:05,059 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 21:55:13,296 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 21:55:13,296 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 21:55:21,258 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-24 21:55:21,258 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 300000 nodos.
+2025-06-24 21:55:22,170 - INFO - Muestreo realizado. Se considerarán 300000 nodos para el grafo.
+2025-06-24 21:55:22,930 - INFO - Diccionario de ubicaciones filtrado a 300000 entradas post-muestreo.
+2025-06-24 21:55:30,047 - INFO - Grafo construido con 300000 nodos y 127050 aristas.
+2025-06-24 21:55:30,247 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 300000, Aristas: 127050
+2025-06-24 21:59:40,079 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 22:07:37,070 - INFO - Aplicación principal iniciada.
+2025-06-24 22:10:55,291 - INFO - Iniciando análisis EDA...
+2025-06-24 22:10:55,292 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 22:10:58,381 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 22:10:58,381 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 22:11:11,738 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 22:11:11,738 - INFO - EDA de ubicación iniciado
+2025-06-24 22:12:52,206 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 22:12:52,226 - INFO - EDA de usuarios iniciado
+2025-06-24 22:13:22,664 - INFO - Outliers en vecinos: 1455677
+2025-06-24 22:13:22,968 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 22:13:43,754 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 22:13:43,757 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 22:13:43,917 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 22:13:43,917 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 22:13:52,197 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 22:13:52,198 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 22:14:00,121 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-24 22:14:00,122 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 30000 nodos.
+2025-06-24 22:14:01,028 - INFO - Muestreo realizado. Se considerarán 30000 nodos para el grafo.
+2025-06-24 22:14:01,756 - INFO - Diccionario de ubicaciones filtrado a 30000 entradas post-muestreo.
+2025-06-24 22:14:07,351 - INFO - Grafo construido con 30000 nodos y 1293 aristas.
+2025-06-24 22:14:07,514 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 30000, Aristas: 1293
+2025-06-24 22:14:32,860 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 22:18:41,610 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-24 22:18:41,611 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-24 22:18:41,659 - INFO - Louvain: Iniciando Nivel 1
+2025-06-24 22:18:41,864 - INFO - Louvain Nivel 1: Modularity global actual: 0.734739
+2025-06-24 22:18:41,865 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-24 22:18:41,888 - INFO - _build_community_graph: Grafo agregado con 29073 nodos.
+2025-06-24 22:18:41,892 - INFO - Louvain: Iniciando Nivel 2
+2025-06-24 22:18:42,157 - INFO - Louvain Nivel 2: Modularity global actual: 0.786805
+2025-06-24 22:18:42,158 - INFO - Louvain: Fase 1 no movió nodos en grafo agregado. Deteniendo.
+2025-06-24 22:18:42,159 - INFO - Louvain finalizado. Mejor modularidad global: 0.786805
+2025-06-24 22:18:42,604 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 28977 comunidades.
+2025-06-24 22:18:42,606 - INFO - UI Message (info): Comunidades detectadas: 28977
+2025-06-24 22:19:35,342 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 22:20:45,394 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:54,849 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:56,777 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:57,577 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:57,761 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:57,945 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:20:58,137 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:21:02,609 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:21:03,849 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:21:04,025 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:21:04,209 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:21:10,233 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:10,785 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:14,009 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:17,073 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:17,361 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:17,537 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:51,136 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:51,641 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:51,801 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:51,976 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,137 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,296 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,457 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,617 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,776 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:52,937 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,105 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,249 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,441 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,617 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,793 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:53,969 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:54,145 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:22:54,321 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:08,177 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:10,089 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:10,241 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:10,409 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:10,577 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:10,753 - INFO - UI Message (warning): Uno o ambos nodos no existen en el grafo.
+2025-06-24 22:23:20,257 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:20,409 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:20,561 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:20,721 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:20,897 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:21,057 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:21,225 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:21,409 - INFO - UI Message (warning): Por favor, ingrese IDs de nodo válidos.
+2025-06-24 22:23:56,561 - INFO - UI Message (info): Buscando camino de 9894452 a 7074698...
+2025-06-24 22:23:56,562 - WARNING - No se encontró camino (BFS manual) entre 9894452 y 7074698.
+2025-06-24 22:23:56,563 - INFO - UI Message (warning): No se encontró camino entre 9894452 y 7074698.
+2025-06-24 22:29:02,088 - INFO - UI Message (info): Buscando camino de 8744286 a 8746294...
+2025-06-24 22:29:02,090 - WARNING - No se encontró camino (BFS manual) entre 8744286 y 8746294.
+2025-06-24 22:29:02,092 - INFO - UI Message (warning): No se encontró camino entre 8744286 y 8746294.
+2025-06-24 22:34:30,016 - INFO - UI Message (info): Calculando Árbol de Expansión Mínima (MST)...
+2025-06-24 22:34:30,040 - INFO - Calculando MST usando Kruskal (manual placeholder)...
+2025-06-24 22:34:30,068 - INFO - Kruskal: MST/MSF construido con 30000 nodos y 1066 aristas únicas.
+2025-06-24 22:34:30,076 - INFO - MST calculado con 30000 nodos y 2132 aristas.
+2025-06-24 22:34:30,087 - INFO - UI Message (info): MST calculado con 2132 aristas.
+2025-06-24 22:42:08,687 - INFO - UI Message (info): Buscando camino de 2276264 a 2276264...
+2025-06-24 22:42:08,689 - INFO - Camino encontrado (BFS manual) entre 2276264 y 2276264: [2276264]
+2025-06-24 22:42:08,690 - INFO - UI Message (info): Camino encontrado: 0 aristas. Distancia: 0.00
+2025-06-24 22:49:15,657 - INFO - Aplicación principal iniciada.
+2025-06-24 22:49:17,733 - INFO - Iniciando análisis EDA...
+2025-06-24 22:49:17,734 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 22:49:20,821 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 22:49:20,821 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 22:49:37,811 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 22:49:37,811 - INFO - EDA de ubicación iniciado
+2025-06-24 22:51:21,089 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 22:51:21,108 - INFO - EDA de usuarios iniciado
+2025-06-24 22:52:07,049 - INFO - Outliers en vecinos: 1455677
+2025-06-24 22:52:07,411 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 22:53:22,893 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 22:53:22,899 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 22:53:25,953 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 22:53:25,953 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 22:53:43,570 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 22:53:43,580 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 22:53:53,242 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-24 22:53:53,243 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 10000 nodos.
+2025-06-24 22:53:54,645 - INFO - Muestreo realizado. Se considerarán 10000 nodos para el grafo.
+2025-06-24 22:53:55,906 - INFO - Diccionario de ubicaciones filtrado a 10000 entradas post-muestreo.
+2025-06-24 22:54:02,218 - INFO - Grafo construido con 10000 nodos y 129 aristas.
+2025-06-24 22:54:02,439 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 10000, Aristas: 129
+2025-06-24 22:54:11,896 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 22:56:32,207 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-24 22:56:32,208 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-24 22:56:32,224 - INFO - Louvain: Iniciando Nivel 1
+2025-06-24 22:56:32,286 - INFO - Louvain Nivel 1: Modularity global actual: 0.799517
+2025-06-24 22:56:32,286 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-24 22:56:32,294 - INFO - _build_community_graph: Grafo agregado con 9908 nodos.
+2025-06-24 22:56:32,294 - INFO - Louvain: Iniciando Nivel 2
+2025-06-24 22:56:32,349 - INFO - Louvain Nivel 2: Modularity global actual: 0.828658
+2025-06-24 22:56:32,349 - INFO - Louvain: Fase 1 no movió nodos en grafo agregado. Deteniendo.
+2025-06-24 22:56:32,350 - INFO - Louvain finalizado. Mejor modularidad global: 0.828658
+2025-06-24 22:56:32,495 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 9897 comunidades.
+2025-06-24 22:56:32,497 - INFO - UI Message (info): Comunidades detectadas: 9897
+2025-06-24 22:56:44,482 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 22:57:02,069 - INFO - UI Message (info): Calculando Árbol de Expansión Mínima (MST)...
+2025-06-24 22:57:02,076 - INFO - Calculando MST usando Kruskal (manual placeholder)...
+2025-06-24 22:57:02,085 - INFO - Kruskal: MST/MSF construido con 10000 nodos y 104 aristas únicas.
+2025-06-24 22:57:02,087 - INFO - MST calculado con 10000 nodos y 208 aristas.
+2025-06-24 22:57:02,091 - INFO - UI Message (info): MST calculado con 208 aristas.
+2025-06-24 22:58:50,357 - INFO - UI Message (info): Buscando camino de 589160 a 26712...
+2025-06-24 22:58:50,358 - WARNING - No se encontró camino (BFS manual) entre 589160 y 26712.
+2025-06-24 22:58:50,359 - INFO - UI Message (warning): No se encontró camino entre 589160 y 26712.
+2025-06-24 23:04:39,538 - INFO - Aplicación principal iniciada.
+2025-06-24 23:04:42,228 - INFO - Iniciando análisis EDA...
+2025-06-24 23:04:42,229 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-24 23:04:45,430 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 23:04:45,430 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-24 23:04:59,141 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 23:04:59,141 - INFO - EDA de ubicación iniciado
+2025-06-24 23:06:41,213 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-24 23:06:41,234 - INFO - EDA de usuarios iniciado
+2025-06-24 23:07:19,377 - INFO - Outliers en vecinos: 1455677
+2025-06-24 23:07:19,744 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-24 23:10:12,747 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-24 23:10:12,750 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-24 23:10:16,654 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-24 23:10:16,654 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-24 23:10:37,027 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-24 23:10:37,028 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-24 23:10:46,552 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-24 23:10:46,553 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 10000 nodos.
+2025-06-24 23:10:47,759 - INFO - Muestreo realizado. Se considerarán 10000 nodos para el grafo.
+2025-06-24 23:10:48,683 - INFO - Diccionario de ubicaciones filtrado a 10000 entradas post-muestreo.
+2025-06-24 23:10:54,515 - INFO - Grafo construido con 10000 nodos y 136 aristas.
+2025-06-24 23:10:54,711 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 10000, Aristas: 136
+2025-06-24 23:11:03,984 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-24 23:11:14,412 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-24 23:11:14,413 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-24 23:11:14,428 - INFO - Louvain: Iniciando Nivel 1
+2025-06-24 23:11:14,492 - INFO - Louvain Nivel 1: Modularity global actual: 0.832254
+2025-06-24 23:11:14,493 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-24 23:11:14,500 - INFO - _build_community_graph: Grafo agregado con 9898 nodos.
+2025-06-24 23:11:14,502 - INFO - Louvain: Iniciando Nivel 2
+2025-06-24 23:11:14,555 - INFO - Louvain Nivel 2: Modularity global actual: 0.866872
+2025-06-24 23:11:14,556 - INFO - Louvain: Fase 1 no movió nodos en grafo agregado. Deteniendo.
+2025-06-24 23:11:14,556 - INFO - Louvain finalizado. Mejor modularidad global: 0.866872
+2025-06-24 23:11:14,703 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 9890 comunidades.
+2025-06-24 23:11:14,704 - INFO - UI Message (info): Comunidades detectadas: 9890
+2025-06-24 23:11:26,492 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-25 01:11:13,998 - INFO - Aplicación principal iniciada.
+2025-06-25 01:15:08,309 - INFO - Iniciando análisis EDA...
+2025-06-25 01:15:08,310 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-25 01:15:08,527 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-25 01:15:08,528 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-25 01:15:17,213 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-25 01:15:17,213 - INFO - EDA de ubicación iniciado
+2025-06-25 01:16:58,688 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-25 01:16:58,708 - INFO - EDA de usuarios iniciado
+2025-06-25 01:17:29,606 - INFO - Outliers en vecinos: 1455677
+2025-06-25 01:17:29,902 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-25 01:17:37,733 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-25 01:17:37,754 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-25 01:17:40,776 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-25 01:17:40,776 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-25 01:17:53,842 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-25 01:17:53,843 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-25 01:18:01,702 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-25 01:18:01,702 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 10000 nodos.
+2025-06-25 01:18:02,575 - INFO - Muestreo realizado. Se considerarán 10000 nodos para el grafo.
+2025-06-25 01:18:03,269 - INFO - Diccionario de ubicaciones filtrado a 10000 entradas post-muestreo.
+2025-06-25 01:18:08,529 - INFO - Grafo construido con 10000 nodos y 162 aristas.
+2025-06-25 01:18:08,727 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 10000, Aristas: 162
+2025-06-25 01:18:17,480 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-25 01:18:33,037 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-25 01:18:33,039 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-25 01:18:33,054 - INFO - Louvain: Iniciando Nivel 1
+2025-06-25 01:18:33,116 - INFO - Louvain Nivel 1: Modularity global actual: 0.772352
+2025-06-25 01:18:33,116 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-25 01:18:33,123 - INFO - _build_community_graph: Grafo agregado con 9881 nodos.
+2025-06-25 01:18:33,124 - INFO - Louvain: Iniciando Nivel 2
+2025-06-25 01:18:33,174 - INFO - Louvain Nivel 2: Modularity global actual: 0.760763
+2025-06-25 01:18:33,174 - INFO - Louvain: Convergencia global. Mejor modularity: 0.772352
+2025-06-25 01:18:33,175 - INFO - Louvain finalizado. Mejor modularidad global: 0.772352
+2025-06-25 01:18:33,324 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 9881 comunidades.
+2025-06-25 01:18:33,325 - INFO - UI Message (info): Comunidades detectadas: 9881
+2025-06-25 01:18:44,679 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-25 01:18:56,429 - INFO - UI Message (info): Calculando Árbol de Expansión Mínima (MST)...
+2025-06-25 01:18:56,437 - INFO - Calculando MST usando Kruskal (manual placeholder)...
+2025-06-25 01:18:56,444 - INFO - Kruskal: MST/MSF construido con 10000 nodos y 136 aristas únicas.
+2025-06-25 01:18:56,446 - INFO - MST calculado con 10000 nodos y 272 aristas.
+2025-06-25 01:18:56,448 - INFO - UI Message (info): MST calculado con 272 aristas.
+2025-06-25 01:55:29,708 - INFO - Aplicación principal iniciada.
+2025-06-25 01:55:31,096 - INFO - Iniciando análisis EDA...
+2025-06-25 01:55:31,097 - INFO - Cargando archivo de ubicación: D:\Ada\Ada Final LL\..\10_million_location.txt
+2025-06-25 01:55:34,073 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-25 01:55:34,073 - INFO - Cargando archivo de usuarios: D:\Ada\Ada Final LL\..\10_million_user.txt
+2025-06-25 01:55:47,395 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-25 01:55:47,395 - INFO - EDA de ubicación iniciado
+2025-06-25 01:57:28,539 - INFO - Outliers latitud: 1460661, Outliers longitud: 102651
+2025-06-25 01:57:28,558 - INFO - EDA de usuarios iniciado
+2025-06-25 01:57:59,281 - INFO - Outliers en vecinos: 1455677
+2025-06-25 01:57:59,575 - INFO - Análisis EDA completado. Revisa los archivos de imagen generados (lat_hist.png, long_hist.png, degree_dist.png).
+2025-06-25 01:58:04,416 - INFO - UI Message (info): Cargando datos, por favor espere...
+2025-06-25 01:58:04,418 - INFO - Cargando archivo de ubicación: D:\Ada\10_million_location.txt
+2025-06-25 01:58:07,378 - INFO - Archivo de ubicación cargado: 10000000 registros
+2025-06-25 01:58:07,378 - INFO - Cargando archivo de usuarios: D:\Ada\10_million_user.txt
+2025-06-25 01:58:15,723 - INFO - Archivo de usuarios cargado: 10000000 registros
+2025-06-25 01:58:15,724 - INFO - Iniciando procesamiento de DataFrames en GraphAnalyzer...
+2025-06-25 01:58:23,579 - INFO - Ubicaciones válidas procesadas: 9970674.
+2025-06-25 01:58:23,579 - INFO - Se aplicará un muestreo para limitar el grafo a aproximadamente 10000 nodos.
+2025-06-25 01:58:24,453 - INFO - Muestreo realizado. Se considerarán 10000 nodos para el grafo.
+2025-06-25 01:58:25,137 - INFO - Diccionario de ubicaciones filtrado a 10000 entradas post-muestreo.
+2025-06-25 01:58:30,355 - INFO - Grafo construido con 10000 nodos y 137 aristas.
+2025-06-25 01:58:30,504 - INFO - UI Message (info): Datos cargados exitosamente. Nodos: 10000, Aristas: 137
+2025-06-25 01:58:39,223 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-25 01:58:49,921 - INFO - UI Message (info): Detectando comunidades, esto puede tardar...
+2025-06-25 01:58:49,923 - INFO - Detectando comunidades usando el algoritmo: louvain...
+2025-06-25 01:58:49,938 - INFO - Louvain: Iniciando Nivel 1
+2025-06-25 01:58:49,988 - INFO - Louvain Nivel 1: Modularity global actual: 0.851195
+2025-06-25 01:58:49,989 - INFO - Louvain Nivel 1: Iniciando Fase 2 (Agregación).
+2025-06-25 01:58:49,996 - INFO - _build_community_graph: Grafo agregado con 9900 nodos.
+2025-06-25 01:58:49,997 - INFO - Louvain: Iniciando Nivel 2
+2025-06-25 01:58:50,047 - INFO - Louvain Nivel 2: Modularity global actual: 0.869288
+2025-06-25 01:58:50,048 - INFO - Louvain: Fase 1 no movió nodos en grafo agregado. Deteniendo.
+2025-06-25 01:58:50,048 - INFO - Louvain finalizado. Mejor modularidad global: 0.869288
+2025-06-25 01:58:50,195 - INFO - Detección de comunidades Louvain (manual placeholder) completada. Encontradas 9893 comunidades.
+2025-06-25 01:58:50,197 - INFO - UI Message (info): Comunidades detectadas: 9893
+2025-06-25 01:59:01,286 - INFO - UI Message (info): Generando estadísticas, por favor espere...
+2025-06-25 01:59:49,313 - INFO - UI Message (info): Calculando Árbol de Expansión Mínima (MST)...
+2025-06-25 01:59:49,322 - INFO - Calculando MST usando Kruskal (manual placeholder)...
+2025-06-25 01:59:49,329 - INFO - Kruskal: MST/MSF construido con 10000 nodos y 108 aristas únicas.
+2025-06-25 01:59:49,331 - INFO - MST calculado con 10000 nodos y 216 aristas.
+2025-06-25 01:59:49,333 - INFO - UI Message (info): MST calculado con 216 aristas.
+2025-06-25 02:00:21,217 - INFO - UI Message (info): Buscando camino de 402089 a 121008...
+2025-06-25 02:00:21,218 - WARNING - No se encontró camino (BFS manual) entre 402089 y 121008.
+2025-06-25 02:00:21,219 - INFO - UI Message (warning): No se encontró camino entre 402089 y 121008.
+2025-06-25 02:01:01,984 - INFO - UI Message (info): Buscando camino de 402089 a 16524...
+2025-06-25 02:01:01,986 - WARNING - No se encontró camino (BFS manual) entre 402089 y 16524.
+2025-06-25 02:01:01,987 - INFO - UI Message (warning): No se encontró camino entre 402089 y 16524.
+2025-06-25 02:01:30,808 - INFO - UI Message (info): Buscando camino de 611552 a 888621...
+2025-06-25 02:01:30,810 - WARNING - No se encontró camino (BFS manual) entre 611552 y 888621.
+2025-06-25 02:01:30,811 - INFO - UI Message (warning): No se encontró camino entre 611552 y 888621.
+2025-06-25 02:02:12,232 - INFO - UI Message (info): Buscando camino de 3775968 a 55249...
+2025-06-25 02:02:12,233 - WARNING - No se encontró camino (BFS manual) entre 3775968 y 55249.
+2025-06-25 02:02:12,234 - INFO - UI Message (warning): No se encontró camino entre 3775968 y 55249.
+2025-06-25 02:02:58,416 - INFO - UI Message (info): Buscando camino de 1691 a 1930225...
+2025-06-25 02:02:58,418 - WARNING - No se encontró camino (BFS manual) entre 1691 y 1930225.
+2025-06-25 02:02:58,419 - INFO - UI Message (warning): No se encontró camino entre 1691 y 1930225.

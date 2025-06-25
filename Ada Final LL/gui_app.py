@@ -8,7 +8,7 @@ import threading
 import logging
 import folium # Añadido para Folium
 from folium.plugins import MarkerCluster, FastMarkerCluster # Para agrupar marcadores
-from tkhtmlview import HTMLLabel
+# from tkhtmlview import HTMLLabel # Eliminado: ya no se usa para mostrar HTML en Tkinter
 import webbrowser # Para abrir HTML en navegador
 import os # Para manejo de archivos
 import tempfile # Para archivos HTML temporales
@@ -100,23 +100,13 @@ class SocialNetworkApp:
         self.mst_button.config(state=tk.DISABLED) # Deshabilitado al inicio
 
 
-        # Panel inferior - Contenedor para el gráfico y las estadísticas
+        # Panel inferior - Contenedor para las estadísticas (el mapa ya no se muestra aquí)
         bottom_panel = tk.Frame(main_frame, bg='#2C3E50')
         bottom_panel.pack(fill=tk.BOTH, expand=True, pady=5)
 
-        # Frame para el mapa (parte izquierda del bottom_panel)
-        map_frame = tk.Frame(bottom_panel, bg='black') # Puedes ajustar el color de fondo si lo deseas
-        map_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
-
-        # Configurar el widget para mostrar el mapa Folium (HTML)
-        # Usaremos ScrolledHTMLText para poder ver mapas grandes si es necesario
-        self.map_html_view = HTMLLabel(map_frame, html="<p>El mapa se mostrará aquí.</p>", background='#2C3E50')
-        self.map_html_view.pack(fill=tk.BOTH, expand=True)
-        self.map_html_view.fit_height() # Ajustar altura inicial
-
-        # Panel lateral para estadísticas (parte derecha del bottom_panel)
+        # Panel para estadísticas (ocupará todo el bottom_panel)
         stats_frame = tk.Frame(bottom_panel, bg='#34495E', relief=tk.GROOVE, bd=2)
-        stats_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5, ipadx=5) # Empaquetar a la derecha del bottom_panel
+        stats_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5) # Ocupa todo el espacio
 
         stats_label = tk.Label(stats_frame, text="INFORMACIÓN DEL GRAFO", bg='#34495E', fg='#EAECEE', font=('Arial', 10, 'bold'))
         stats_label.pack(pady=5)
@@ -254,7 +244,8 @@ class SocialNetworkApp:
         mst_graph: un CustomGraph que representa el MST.
         """
         if not self.data_loaded:
-            self.map_html_view.set_html("<p>Cargue datos para ver el mapa.</p>")
+            logging.info("Datos no cargados. No se generará el mapa.")
+            # self.map_html_view.set_html("<p>Cargue datos para ver el mapa.</p>") # Eliminado
             return
 
         map_center = self._get_folium_map_center()
@@ -358,25 +349,29 @@ class SocialNetworkApp:
                 temp_html_file = tmpfile.name
                 print(f"DEBUG: Mapa temporal guardado en: {temp_html_file}")
                 import webbrowser
-                webbrowser.open(f"file://{temp_html_file}")
-
-            with open(temp_html_file, "r", encoding="utf-8") as f:
-                html_content = f.read()
-            self.map_html_view.set_html(html_content)
+                webbrowser.open(f"file://{temp_html_file}", new=0)
+            # with open(temp_html_file, "r", encoding="utf-8") as f: # Eliminado
+            #     html_content = f.read() # Eliminado
+            # self.map_html_view.set_html(html_content) # Eliminado
             
         except Exception as e:
-            logging.error(f"Error al renderizar mapa Folium: {e}")
-            self.map_html_view.set_html(f"<p>Error al generar el mapa: {e}</p>")
+            logging.error(f"Error al renderizar o abrir mapa Folium: {e}")
+            # self.map_html_view.set_html(f"<p>Error al generar el mapa: {e}</p>") # Eliminado
         #finally:
+        #    # Considerar si el archivo temporal debe eliminarse o no.
+        #    # Si se abre en el navegador, podría ser mejor mantenerlo hasta que la app cierre,
+        #    # o darle un nombre único y gestionarlo. Por ahora, se mantiene la lógica de no borrarlo
+        #    # inmediatamente para que el navegador pueda accederlo.
         #    if temp_html_file and os.path.exists(temp_html_file):
         #        try:
-        #            os.remove(temp_html_file)
+        #            # os.remove(temp_html_file) # Comentado para que el navegador pueda acceder
+        #            pass
         #        except OSError as e:
         #            logging.warning(f"No se pudo eliminar el archivo temporal del mapa: {e}")
 
 
     def _update_map_visualization(self):
-        """Actualiza la visualización del mapa Folium."""
+        """Actualiza la visualización del mapa Folium (abriendo en navegador)."""
         path_to_draw = self.current_path if self.current_path else None
         communities_to_draw = self.analyzer.communities if self.communities_detected else None
         mst_to_draw = self.analyzer.mst # Obtener el MST calculado desde el analizador
@@ -534,7 +529,12 @@ class SocialNetworkApp:
             sorted_communities = sorted(self.analyzer.communities.items(), key=lambda item: item[1]['size'], reverse=True)
             for i, (comm_id, comm_data) in enumerate(sorted_communities[:5]):
                 detailed_stats += f"• Comunidad {comm_id}: {comm_data['size']} nodos\n"
-                detailed_stats += f"  Centro: ({comm_data['center_lat']:.2f}, {comm_data['center_lng']:.2f})\n"
+                detailed_stats += f"  Centro: ({comm_data.get('center_lat', 0.0):.2f}, {comm_data.get('center_lng', 0.0):.2f})\n"
+                # Mostrar algunos nodos de ejemplo
+                node_examples = list(comm_data.get('nodes', []))[:3]
+                if node_examples:
+                    detailed_stats += f"  Nodos de ejemplo: {', '.join(map(str, node_examples))}\n"
+
             if len(sorted_communities) > 5:
                 detailed_stats += f"  ... y {len(sorted_communities) - 5} comunidades más.\n"
             detailed_stats += "\n"
@@ -619,10 +619,10 @@ class SocialNetworkApp:
 
     def clear_visualization(self):
         """Limpia toda la visualización del grafo y reinicia el estado."""
-        # Limpiar el widget de Folium
-        self.map_html_view.set_html("<p>Mapa limpiado. Cargue nuevos datos.</p>")
+        # Ya no hay widget de Folium que limpiar aquí. El navegador gestiona sus propias pestañas.
+        # self.map_html_view.set_html("<p>Mapa limpiado. Cargue nuevos datos.</p>") # Eliminado
 
-        self.selected_nodes = [] # Aunque la selección directa en mapa no está, mantenemos por si se usa para entradas de camino
+        self.selected_nodes = []
         self.current_path = []
         self.data_loaded = False
         self.communities_detected = False

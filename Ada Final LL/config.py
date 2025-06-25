@@ -12,14 +12,12 @@ WINDOW_HEIGHT = 900
 
 # Configuración de visualización
 # ADVERTENCIA: Visualizar demasiados nodos puede ser extremadamente lento o bloquear la aplicación.
-# Se recomienda mantener un límite para la visualización, incluso si procesas el grafo completo.
 MAX_NODES_DISPLAY = None 
 
 # Muestreo de datos inicial. 
 # Esta es la variable MÁS IMPORTANTE. Cámbiala a 'None' para leer y procesar todos los datos.
-SAMPLE_SIZE = None # Antes estaba en 100000
+SAMPLE_SIZE = 10000
 
 # Límite de nodos para el subgrafo del camino más corto.
 # Al ponerlo en 'None', eliminas el límite para esta función específica,
-# permitiendo que busque en todo el grafo que fue cargado en memoria (controlado por SAMPLE_SIZE).
 MAX_PATH_NODES = None # Antes estaba en 1000

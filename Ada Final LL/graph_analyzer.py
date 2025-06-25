@@ -43,64 +43,62 @@ class GraphAnalyzer:
         # Procesar locations_df
         # Asumiendo que locations_df tiene columnas 'lat' y 'long'
         # Y que el índice de la fila (0-indexed) corresponde al ID de usuario/nodo
-        for i, row in enumerate(locations_df.iter_rows()):
-            # La columna 'long' en loader.py fue renombrada a 'lng' en el read_csv
-            # Asegúrate de que las columnas sean 'lat' y 'lng' o ajusta según lo que reciba
-            lat, lng = row[0], row[1] # Acceder por índice si las columnas no tienen nombre
-            
-            # Si las columnas sí tienen nombres como en el loader:
-            # lat = row[locations_df.find_idx_by_name("lat")]
-            # lng = row[locations_df.find_idx_by_name("long")] # O "lng" si el loader ya lo renombra
-            
-            # Loader ya está renombrando a "lat", "long". Lo mejor es que en el loader sea "lat", "lng"
-            # y que se acceda por nombre aquí para robustez, pero por ahora asumimos orden.
+        for i, row_values in enumerate(locations_df.iter_rows()):
+            # locations_df tiene columnas: "id", "lat", "long" en ese orden.
+            # row_values será una tupla: (id_val, lat_val, long_val)
+            # El índice 'i' de enumerate corresponde al 'id_val' y es el ID del nodo.
+            node_id = i # o row_values[0], ambos deben ser iguales. Usar i es más directo.
+            lat = row_values[1] 
+            lng = row_values[2]
             
             if self._is_valid_location(lat, lng):
-                self.locations[i] = (lat, lng) # Guardar como (lat, lng)
+                self.locations[node_id] = (lat, lng) # Guardar como (lat, lng)
                 valid_node_ids.add(i)
         
         logging.info(f"Ubicaciones válidas procesadas: {len(self.locations)}.")
 
         # Procesar user_df (listas de adyacencia)
-        self.graph = CustomGraph() # Reiniciar el grafo con la clase personalizada
+        self.graph = CustomGraph() # Reiniciar el grafo
 
-        # Si se especifica un sample_size, muestrear user_df
-        if sample_size is not None and user_df.height > sample_size:
-            # Samplear un subconjunto de usuarios para construir el grafo
-            # Esto puede llevar a un grafo desconectado o con menos nodos de los esperados
-            user_df = user_df.sample(n=sample_size, shuffle=True, seed=42)
-            logging.info(f"Muestreo de {sample_size} usuarios para la construcción del grafo.")
-        
+        # Determinar el conjunto final de nodos a incluir en el grafo
+        nodes_to_consider_for_graph = valid_node_ids # Por defecto, todos los nodos con ubicación válida
+
+        if sample_size is not None and len(valid_node_ids) > sample_size:
+            logging.info(f"Se aplicará un muestreo para limitar el grafo a aproximadamente {sample_size} nodos.")
+            # Tomar una muestra aleatoria de los nodos que tienen ubicaciones válidas
+            # Convertir set a list para np.random.choice
+            potential_nodes_list = list(valid_node_ids)
+            # Asegurarse de no pedir más muestras de las disponibles
+            actual_sample_size = min(sample_size, len(potential_nodes_list))
+            sampled_node_ids = set(np.random.choice(potential_nodes_list, actual_sample_size, replace=False))
+            nodes_to_consider_for_graph = sampled_node_ids
+            logging.info(f"Muestreo realizado. Se considerarán {len(nodes_to_consider_for_graph)} nodos para el grafo.")
+
+            # Filtrar self.locations para que solo contenga los nodos muestreados
+            self.locations = {node_id: loc for node_id, loc in self.locations.items() if node_id in nodes_to_consider_for_graph}
+            logging.info(f"Diccionario de ubicaciones filtrado a {len(self.locations)} entradas post-muestreo.")
+
         # Construir el grafo
-        nodes_in_graph = set() # Para llevar un registro de los nodos que realmente se añaden al grafo
+        # Iterar sobre el user_df original. El índice 'i' es el ID original del nodo.
+        for i, adj_row in enumerate(user_df.iter_rows(named=True)): # Asumiendo que 'adj_list' es el nombre de la columna
+            current_node_original_id = i 
+            adj_str = adj_row['adj_list']
 
-        for i, adj_str in enumerate(user_df['adj_list']): # Ya corregido: eliminado .to_series()
-            current_node = i # Asumiendo que el índice de la fila es el ID del nodo
-            
-            # Solo considerar nodos que tienen una ubicación válida
-            if current_node in valid_node_ids:
-                if current_node not in nodes_in_graph:
-                    self.graph.add_node(current_node)
-                    nodes_in_graph.add(current_node)
+            if current_node_original_id in nodes_to_consider_for_graph:
+                self.graph.add_node(current_node_original_id) # Añadir nodo al grafo
 
                 if adj_str: # Asegurarse de que la cadena no esté vacía
                     try:
-                        # CORRECCIÓN AQUÍ: Reemplazar comas por espacios y luego dividir
-                        # Filtrar cadenas vacías resultantes de múltiples espacios o comas
                         neighbors_str_list = adj_str.replace(',', ' ').split()
+                        original_neighbor_ids = [int(n) for n in neighbors_str_list if n.isdigit()]
                         
-                        # Convertir a int, solo si la cadena es un dígito
-                        neighbors = [int(n) for n in neighbors_str_list if n.isdigit()]
-                        
-                        for neighbor in neighbors:
-                            # Solo añadir aristas si el vecino también tiene una ubicación válida
-                            if neighbor in valid_node_ids:
-                                if neighbor not in nodes_in_graph:
-                                    self.graph.add_node(neighbor)
-                                    nodes_in_graph.add(neighbor)
-                                self.graph.add_edge(current_node, neighbor)
+                        for neighbor_id in original_neighbor_ids:
+                            # Añadir arista solo si el vecino también está en el conjunto de nodos a considerar
+                            if neighbor_id in nodes_to_consider_for_graph:
+                                self.graph.add_node(neighbor_id) # Asegurar que el vecino también esté como nodo
+                                self.graph.add_edge(current_node_original_id, neighbor_id)
                     except ValueError as ve:
-                        logging.warning(f"Error al parsear lista de adyacencia para el nodo {current_node}: {ve}. Línea: '{adj_str}'")
+                        logging.warning(f"Error al parsear lista de adyacencia para el nodo {current_node_original_id}: {ve}. Línea: '{adj_str}'")
             
         logging.info(f"Grafo construido con {self.graph.number_of_nodes()} nodos y {self.graph.number_of_edges()} aristas.")
         self.communities = {} # Reset communities on new data load
