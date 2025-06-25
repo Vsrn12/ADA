@@ -1,4 +1,4 @@
-# Análisis de Red Social - Visualización de Grafos
+# Análisis de Red Social - Visualización de Grafos Por: Piero Adrian Delgado Chipana y Sebastian Adriano Castro Mamani
 
 ## 📋 Descripción
 
@@ -116,16 +116,3 @@ Para una **descripción exhaustiva** de cada módulo, las clases, funciones, los
 - **Polars**: Para la carga y manipulación eficiente de datos.
 - **Numpy**: Para operaciones numéricas.
 - **Pandas, Matplotlib, Seaborn**: Utilizados en el script `eda.py` opcional.
-
-## 📝 Notas Importantes
-
-- Los archivos de datos (`.txt`) deben estar en el directorio raíz del proyecto, junto a la carpeta `Ada Final LL/`.
-- El rendimiento de los algoritmos manuales (especialmente Louvain) en Python puro puede ser limitado para grafos extremadamente grandes (millones de nodos) si se procesa el conjunto completo sin muestreo.
-
-## 🤝 Contribuciones
-
-Este proyecto es un esfuerzo por integrar el análisis de grafos, la implementación de algoritmos desde cero, y la visualización interactiva para el estudio de redes sociales masivas.
-
-## 📄 Licencia
-
-Proyecto académico.
